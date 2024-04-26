@@ -8,25 +8,31 @@ let humanIndex = 0;
 
 
 const deviceDecision = (getArr) => {
-
-    if(deviceWin == true){
-        for(let i=0; i<=2; i++){
-            if(getArr[deviceIndex][i] != 'O'){
+    if (deviceWin == true) {
+        console.log(deviceWin, deviceIndex);
+        deviceWin=false;
+        for (let i = 0; i <= 2; i++) {
+            if (getArr[deviceIndex][i] != 'O') {
                 return getArr[deviceIndex][i];
             }
         }
     }
-    else if(humanWin == true){
-        for(let i=0; i<=2; i++){
-            if(getArr[humanIndex][i] != 'X'){
+    else if (humanWin == true) {
+        console.log(humanWin, humanIndex);
+        humanWin=false;
+        for (let i = 0; i <= 2; i++) {
+            if (getArr[humanIndex][i] != 'X') {
                 return getArr[humanIndex][i];
             }
         }
     }
-    else{
-        for(let i=0; i<=7; i++){
-            for(let j=0; j<=2; j++){
-                if(getArr[i][j] !== 'X' && getArr[i][j] !== 'O'){
+    else {
+        humanWin=false;
+        deviceWin=false;
+        for (let i = 0; i <= 7; i++) {
+            for (let j = 0; j <= 2; j++) {
+                if (getArr[i][j] !== 'X' && getArr[i][j] !== 'O') {
+                    console.log(getArr[i][j])
                     return getArr[i][j];
                 }
             }
@@ -38,7 +44,6 @@ const deviceDecision = (getArr) => {
 export const deviceLetter = (arr) => {
 
     for (let i = 0; i <= 7; i++) {
-        console.log(arr[i]);
         let xCount = 0;
         for (let j = 0; j <= 2; j++) {
             if (arr[i][j] == 'X') {
@@ -49,8 +54,7 @@ export const deviceLetter = (arr) => {
         }
         if (xCount == 2) {
             humanIndex = i;
-            humanWin = true
-            console.log(i, arr[i]);
+            humanWin = true;
         }
     }
 
@@ -65,7 +69,7 @@ export const deviceLetter = (arr) => {
         }
         if (xDount == 2) {
             deviceIndex = i;
-            deviceWin = true
+            deviceWin = true;
         }
     }
 

@@ -34,8 +34,8 @@ export default function Home() {
                 if (arr[i][j] == letter) {
                     arr[i][j] = 'O';
                 }
+                setArr(arr);
             }
-            setArr(arr);
         }
 
         if (letter == 1) setOne('O')
@@ -55,8 +55,8 @@ export default function Home() {
                 if (arr[i][j] == a) {
                     arr[i][j] = 'X';
                 }
+                setArr(arr);
             }
-            setArr(arr);
         }
         device();
 
@@ -73,7 +73,7 @@ export default function Home() {
 
 
     return (
-        <div>
+        <div className='flex flex-col justify-center items-center'>
             <div>
                 <div className='flex items-center gap-x-2'>
                     <div>
@@ -146,8 +146,9 @@ export default function Home() {
                 </div>
             </div>
 
-            <div>
-                <button onClick={device}>device first</button>
+            <div className='flex items-center gap-x-5 mt-10'>
+                <button className='btn btn-accent' onClick={device}>Device first</button>
+                <button className='btn btn-error' onClick={() => location.reload()}>Refresh</button>
             </div>
         </div>
     )
