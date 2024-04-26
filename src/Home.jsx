@@ -28,7 +28,15 @@ export default function Home() {
 
     const device = () => {
         const letter = deviceLetter(arr);
-        // console.log(letter, typeof(letter));
+
+        for (let i = 0; i <= 7; i++) {
+            for (let j = 0; j <= 2; j++) {
+                if (arr[i][j] == letter) {
+                    arr[i][j] = 'O';
+                }
+            }
+            setArr(arr);
+        }
 
         if (letter == 1) setOne('O')
         else if (letter == 2) setTwo('O')
@@ -39,19 +47,19 @@ export default function Home() {
         else if (letter == 7) setSeven('O')
         else if (letter == 8) setEight('O')
         else setNine('O');
-
-        for (let i = 0; i <= 7; i++) {
-            for (let j = 0; j <= 2; j++) {
-                if (arr[i][j] == letter) {
-                    arr[i][j] = 'O';
-                    setArr(arr)
-                }
-            }
-        }
-        console.log(arr);
     }
 
     const human = (a) => {
+        for (let i = 0; i <= 7; i++) {
+            for (let j = 0; j <= 2; j++) {
+                if (arr[i][j] == a) {
+                    arr[i][j] = 'X';
+                }
+            }
+            setArr(arr);
+        }
+        device();
+
         if (a == 1) setOne('X')
         else if (a == 2) setTwo('X')
         else if (a == 3) setThree('X')
@@ -61,18 +69,8 @@ export default function Home() {
         else if (a == 7) setSeven('X')
         else if (a == 8) setEight('X')
         else setNine('X');
-
-        for (let i = 0; i <= 7; i++) {
-            for (let j = 0; j <= 2; j++) {
-                if (arr[i][j] == a) {
-                    arr[i][j] = 'X';
-                    setArr(arr)
-                }
-            }
-        }
-
-        device()
     }
+
 
     return (
         <div>

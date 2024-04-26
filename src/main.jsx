@@ -4,9 +4,7 @@ import App from './App.jsx'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <div className='max-w-7xl mx-auto my-10'>
-      <App />
-    </div>
-  </React.StrictMode>,
+  <div className='max-w-7xl mx-auto my-10'>
+    <App />
+  </div>
 )

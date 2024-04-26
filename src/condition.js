@@ -1,106 +1,76 @@
-let person = 0;
-let personIndex;
-let device = 0;
-let deviceIndex;
 
-const resultArr = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9],
-    [1, 4, 7],
-    [2, 5, 8],
-    [3, 6, 9],
-    [1, 5, 9],
-    [3, 5, 7]
-];
+let deviceWin = false;
+let deviceIndex = 0;
 
-// for first step
-let firstStep = 0;
-let firstStepIndex = 0;
+let humanWin = false;
+let humanIndex = 0;
 
-// for second step
-let personLast;
-let deviceLast;
-const deviceDission = (person, personIndex, device, deviceIndex, arr) => {
-    console.log(person, device);
 
-    if (person < 2 && device < 2) {
-        console.log(arr);
 
-        for (let i = 0; i <= 7; i++) {
-            firstStep = 0;
-            firstStepIndex = 0;
-            for (let j = 0; j <= 2; j++) {
-                if (arr[i][j] != 'X' && arr[i][j] != 'O') {
-                    firstStep++;
-                }
-            }
-            if (firstStep == 3) {
-                firstStepIndex = arr[i][0];
-                break;
+const deviceDecision = (getArr) => {
+
+    if(deviceWin == true){
+        for(let i=0; i<=2; i++){
+            if(getArr[deviceIndex][i] != 'O'){
+                return getArr[deviceIndex][i];
             }
         }
-
-        return firstStepIndex;
     }
-
-    else if (person >= 2 || device >= 2) {
-        if (device >= 2) {
-            console.log('final', deviceIndex);
-            for (let i = 0; i <= 2; i++) {
-                console.log(arr[deviceIndex][i])
-                if (arr[deviceIndex][i] != 'X' && arr[deviceIndex][i] != 'O') {
-
-                    return arr[deviceIndex][i];
-
-                }
+    else if(humanWin == true){
+        for(let i=0; i<=2; i++){
+            if(getArr[humanIndex][i] != 'X'){
+                return getArr[humanIndex][i];
             }
         }
-        if (person >= 2) {
-            for (let i = 0; i <= 2; i++) {
-                if (arr[personIndex][i] != 'X' && arr[personIndex][i] != 'O') {
-                    // console.log(arr[personIndex][i])
-                    return arr[personIndex][i];
+    }
+    else{
+        for(let i=0; i<=7; i++){
+            for(let j=0; j<=2; j++){
+                if(getArr[i][j] !== 'X' && getArr[i][j] !== 'O'){
+                    return getArr[i][j];
                 }
             }
         }
     }
-
 
 }
 
 export const deviceLetter = (arr) => {
-    // console.log(arr);
 
     for (let i = 0; i <= 7; i++) {
-        let tempP = 0;
-        let tempD = 0;
-
+        console.log(arr[i]);
+        let xCount = 0;
         for (let j = 0; j <= 2; j++) {
             if (arr[i][j] == 'X') {
-                console.log(i, arr[i][j])
-                tempP++;
-                console.log(tempP)
-            }
-            else if (arr[i][j] == 'O') {
-                tempP = 0;
-                tempD++;
-            }
-            else {
-                tempP = tempP;
+                xCount++;
+            } else if (arr[i][j] == 'O') {
+                xCount--;
             }
         }
-        if (tempP > person) {
-            person = tempP;
-            personIndex = i;
-        };
-        if (tempD > device) {
-            device = tempD;
-            deviceIndex = i;
+        if (xCount == 2) {
+            humanIndex = i;
+            humanWin = true
+            console.log(i, arr[i]);
         }
     }
 
-    const step = deviceDission(person, personIndex, device, deviceIndex, arr);
-    return step;
+    for (let i = 0; i <= 7; i++) {
+        let xDount = 0;
+        for (let j = 0; j <= 2; j++) {
+            if (arr[i][j] == 'O') {
+                xDount++;
+            } else if (arr[i][j] == 'X') {
+                xDount--;
+            }
+        }
+        if (xDount == 2) {
+            deviceIndex = i;
+            deviceWin = true
+        }
+    }
+
+    const decided = deviceDecision(arr);
+
+    return decided;
 };
 
