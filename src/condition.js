@@ -9,7 +9,6 @@ let humanIndex = 0;
 
 const deviceDecision = (getArr) => {
     if (deviceWin == true) {
-        console.log(deviceWin, deviceIndex);
         deviceWin=false;
         for (let i = 0; i <= 2; i++) {
             if (getArr[deviceIndex][i] != 'O') {
@@ -18,7 +17,6 @@ const deviceDecision = (getArr) => {
         }
     }
     else if (humanWin == true) {
-        console.log(humanWin, humanIndex);
         humanWin=false;
         for (let i = 0; i <= 2; i++) {
             if (getArr[humanIndex][i] != 'X') {
@@ -32,7 +30,6 @@ const deviceDecision = (getArr) => {
         for (let i = 0; i <= 7; i++) {
             for (let j = 0; j <= 2; j++) {
                 if (getArr[i][j] !== 'X' && getArr[i][j] !== 'O') {
-                    console.log(getArr[i][j])
                     return getArr[i][j];
                 }
             }
