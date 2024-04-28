@@ -5,7 +5,6 @@ export default function Home() {
     const [dFirst, setDFirst] = useState(true);
     const [hWin, setHWin] = useState(false);
     const [dWin, setDWin] = useState(false);
-
     const [dCount, setDCount] = useState(0);
 
     const resultArr = [
@@ -31,10 +30,8 @@ export default function Home() {
     const [eight, setEight] = useState('');
     const [nine, setNine] = useState('');
 
-
-
     const device = () => {
-        setDCount(dCount + 1);
+        setDCount(prevCount => prevCount + 1);
 
         if (hWin || dWin || dCount >= 4) {
             return;
@@ -52,33 +49,30 @@ export default function Home() {
                 }
             }
 
-            if (letter == 1) setOne('O')
-            else if (letter == 2) setTwo('O')
-            else if (letter == 3) setThree('O')
-            else if (letter == 4) setFour('O')
-            else if (letter == 5) setFive('O')
-            else if (letter == 6) setSix('O')
-            else if (letter == 7) setSeven('O')
-            else if (letter == 8) setEight('O')
-            else setNine('O');
+            setTimeout(() => {
+                if (letter == 1) setOne('O')
+                else if (letter == 2) setTwo('O')
+                else if (letter == 3) setThree('O')
+                else if (letter == 4) setFour('O')
+                else if (letter == 5) setFive('O')
+                else if (letter == 6) setSix('O')
+                else if (letter == 7) setSeven('O')
+                else if (letter == 8) setEight('O')
+                else setNine('O');
 
-            for (let i = 0; i <= 7; i++) {
-                let count = 0;
-                for (let j = 0; j <= 2; j++) {
-                    if (arr[i][j] == 'O') {
-                        count++
+                for (let i = 0; i <= 7; i++) {
+                    let count = 0;
+                    for (let j = 0; j <= 2; j++) {
+                        if (arr[i][j] == 'O') {
+                            count++
+                        }
+                    }
+                    if (count == 3) {
+                        return setDWin(true);
                     }
                 }
-                if (count == 3) {
-                    return setDWin(true);
-                }
-            }
+            }, 300)
         }
-    }
-
-    const deviceFirst = () => {
-        setDCount(dCount - 1);
-        device();
     }
 
     const human = (a) => {
@@ -118,6 +112,11 @@ export default function Home() {
         if (!dWin) {
             device();
         }
+    }
+
+    const deviceFirst = () => {
+        setDCount(prevCount => prevCount - 1);
+        device();
     }
 
     return (
