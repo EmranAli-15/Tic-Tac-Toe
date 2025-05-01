@@ -14,3 +14,9 @@
     background-color: #7BD3EA;
     color: white;
 }
+
+body
+{
+    min-height: 100vh;
+    background-color: white;
+}

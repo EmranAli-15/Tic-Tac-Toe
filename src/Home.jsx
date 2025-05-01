@@ -212,12 +212,12 @@ export default function Home() {
                 </div>
                 <div className='mt-5 flex gap-x-2'>
                     <button
-                        className={`${dFirst == false ? "hidden" : "block"} btn bg-[#fc5897] text-white font-bold`}
+                        className={`${dFirst == false ? "hidden" : "block"} btn border-none bg-[#fc5897] text-white font-bold`}
                         onClick={deviceFirst}>
                         BOT First
                     </button>
                     <button
-                        className={`${dFirst == false ? "block" : "hidden"} btn bg-[#FE7743] text-white font-bold`}
+                        className={`${dFirst == false ? "block" : "hidden"} btn border-none bg-[#FE7743] text-white font-bold`}
                         onClick={() => location.reload()}>
                         Refresh
                     </button>
