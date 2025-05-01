@@ -3,8 +3,14 @@
 @tailwind utilities;
 
 .myBtn{
+    display: flex;
     height: 60px;
     width: 60px;
-    font-size: larger;
+    font-size: 40px;
     font-weight: bold;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    background-color: #7BD3EA;
+    color: white;
 }

@@ -121,72 +121,82 @@ export default function Home() {
 
     return (
         <div className='flex flex-col justify-center items-center'>
-            <div>
+            <div className='shadow-sm p-7 rounded-lg'>
                 <div className='flex items-center gap-x-2'>
                     <div>
                         <button
-                            disabled={one == 'X' || one == 'O' || hWin || dWin} onClick={() => human(1)}
-                            className={`${one == 'X' ? 'bg-green-600' : 'bg-gray-600'} myBtn text-white`}
-                        >{one}
+                            disabled={one == 'X' || one == 'O' || hWin || dWin}
+                            onClick={() => human(1)}
+                            className='myBtn'
+                        >
+                            {one}
                         </button>
                     </div>
                     <div>
                         <button
-                            disabled={two == 'X' || two == 'O' || hWin || dWin} onClick={() => human(2)}
-                            className={`${two == 'X' ? 'bg-green-600' : 'bg-gray-600'} myBtn text-white`}
-                        >{two}
+                            disabled={two == 'X' || two == 'O' || hWin || dWin}
+                            onClick={() => human(2)}
+                            className='myBtn'                        >
+                            {two}
                         </button>
                     </div>
                     <div>
                         <button
-                            disabled={three == 'X' || three == 'O' || hWin || dWin} onClick={() => human(3)}
-                            className={`${three == 'X' ? 'bg-green-600' : 'bg-gray-600'} myBtn text-white`}>{
-                                three}
+                            disabled={three == 'X' || three == 'O' || hWin || dWin}
+                            onClick={() => human(3)}
+                            className='myBtn'                        >
+                            {three}
                         </button>
                     </div>
                 </div>
                 <div className='flex items-center gap-x-2 my-2'>
                     <div>
                         <button
-                            disabled={four == 'X' || four == 'O' || hWin || dWin} onClick={() => human(4)}
-                            className={`${four == 'X' ? 'bg-green-600' : 'bg-gray-600'} myBtn text-white`}>
+                            disabled={four == 'X' || four == 'O' || hWin || dWin}
+                            onClick={() => human(4)}
+                            className='myBtn'                        >
                             {four}
                         </button>
                     </div>
                     <div>
                         <button
-                            disabled={five == 'X' || five == 'O' || hWin || dWin} onClick={() => human(5)}
-                            className={`${five == 'X' ? 'bg-green-600' : 'bg-gray-600'} myBtn text-white`}>
+                            disabled={five == 'X' || five == 'O' || hWin || dWin}
+                            onClick={() => human(5)}
+                            className='myBtn'                        >
                             {five}
                         </button>
                     </div>
                     <div>
                         <button
-                            disabled={six == 'X' || six == 'O' || hWin || dWin} onClick={() => human(6)}
-                            className={`${six == 'X' ? 'bg-green-600' : 'bg-gray-600'} myBtn text-white`}
-                        >{six}
+                            disabled={six == 'X' || six == 'O' || hWin || dWin}
+                            onClick={() => human(6)}
+                            className='myBtn'                        >
+                            {six}
                         </button>
                     </div>
                 </div>
                 <div className='flex items-center gap-x-2'>
                     <div>
                         <button
-                            disabled={seven == 'X' || seven == 'O' || hWin || dWin} onClick={() => human(7)}
-                            className={`${seven == 'X' ? 'bg-green-600' : 'bg-gray-600'} myBtn text-white`}>{
-                                seven}
+                            disabled={seven == 'X' || seven == 'O' || hWin || dWin}
+                            onClick={() => human(7)}
+                            className='myBtn'                        >
+                            {seven}
                         </button>
                     </div>
                     <div>
                         <button
-                            disabled={eight == 'X' || eight == 'O' || hWin || dWin} onClick={() => human(8)}
-                            className={`${eight == 'X' ? 'bg-green-600' : 'bg-gray-600'} myBtn text-white`}>{
-                                eight}
+                            disabled={eight == 'X' || eight == 'O' || hWin || dWin}
+                            onClick={() => human(8)}
+                            className='myBtn'                        >
+                            {eight}
                         </button>
                     </div>
                     <div>
                         <button
-                            disabled={nine == 'X' || nine == 'O' || hWin || dWin} onClick={() => human(9)}
-                            className={`${nine == 'X' ? 'bg-green-600' : 'bg-gray-600'} myBtn text-white`}>
+                            disabled={nine == 'X' || nine == 'O' || hWin || dWin}
+                            onClick={() => human(9)}
+                            className='myBtn'                        >
                             {nine}
                         </button>
                     </div>
@@ -198,11 +208,19 @@ export default function Home() {
                     {hWin == true ? <p className='bg-green-500 p-3 rounded-md font-extrabold text-white'>You Win</p> : ''}
                 </div>
                 <div>
-                    {dWin == true ? <p className='bg-red-500 p-3 rounded-md font-extrabold text-white'>Device Win</p> : ''}
+                    {dWin == true ? <p className='bg-red-500 p-3 rounded-md font-extrabold text-white'>BOT Win</p> : ''}
                 </div>
                 <div className='mt-5 flex gap-x-2'>
-                    <button disabled={dFirst == false} className='btn btn-accent' onClick={deviceFirst}>Device first</button>
-                    <button className='btn btn-error' onClick={() => location.reload()}>Refresh</button>
+                    <button
+                        className={`${dFirst == false ? "hidden" : "block"} btn bg-[#fc5897] text-white font-bold`}
+                        onClick={deviceFirst}>
+                        BOT First
+                    </button>
+                    <button
+                        className={`${dFirst == false ? "block" : "hidden"} btn bg-[#FE7743] text-white font-bold`}
+                        onClick={() => location.reload()}>
+                        Refresh
+                    </button>
                 </div>
 
             </div>

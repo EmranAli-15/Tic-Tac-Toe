@@ -4,7 +4,9 @@ import App from './App.jsx'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <div className='max-w-7xl mx-auto my-10'>
+  <div className='bg-[#fff]'>
+    <div className='max-w-7xl mx-auto my-10'>
     <App />
+  </div>
   </div>
 )
