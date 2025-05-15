@@ -1,5 +1,8 @@
-## Live Link : ```https://mellifluous-paprenjak-0c2914.netlify.app/```
+## Tic-Tac-Toe
 
-## Your device will play against you.
+### Live Link : ```https://mellifluous-paprenjak-0c2914.netlify.app/```
 
-## React.JS, Tailwind CSS
+### Your device will play against you.
+
+### Technology
+React, TailwindCSS
