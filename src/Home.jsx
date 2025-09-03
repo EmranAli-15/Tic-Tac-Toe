@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { deviceLetter } from './condition';
+import { Cross, Zero } from './UI/Icons';
 
 export default function Home() {
     const [dFirst, setDFirst] = useState(true);
@@ -121,31 +122,34 @@ export default function Home() {
 
     return (
         <div className='flex flex-col justify-center items-center'>
-            <div className='shadow-sm p-7 rounded-lg'>
+            <div className='button-38 p-7 rounded-lg'>
                 <div className='flex items-center gap-x-2'>
                     <div>
                         <button
                             disabled={one == 'X' || one == 'O' || hWin || dWin}
                             onClick={() => human(1)}
-                            className='myBtn'
+                            className='button-37'
                         >
-                            {one}
+                            {one == 'O' && <Zero></Zero>}
+                            {one == 'X' && <Cross></Cross>}
                         </button>
                     </div>
                     <div>
                         <button
                             disabled={two == 'X' || two == 'O' || hWin || dWin}
                             onClick={() => human(2)}
-                            className='myBtn'                        >
-                            {two}
+                            className='button-37'                        >
+                            {two == 'O' && <Zero></Zero>}
+                            {two == 'X' && <Cross></Cross>}
                         </button>
                     </div>
                     <div>
                         <button
                             disabled={three == 'X' || three == 'O' || hWin || dWin}
                             onClick={() => human(3)}
-                            className='myBtn'                        >
-                            {three}
+                            className='button-37'                        >
+                            {three == 'O' && <Zero></Zero>}
+                            {three == 'X' && <Cross></Cross>}
                         </button>
                     </div>
                 </div>
@@ -154,24 +158,27 @@ export default function Home() {
                         <button
                             disabled={four == 'X' || four == 'O' || hWin || dWin}
                             onClick={() => human(4)}
-                            className='myBtn'                        >
-                            {four}
+                            className='button-37'                        >
+                            {four == 'O' && <Zero></Zero>}
+                            {four == 'X' && <Cross></Cross>}
                         </button>
                     </div>
                     <div>
                         <button
                             disabled={five == 'X' || five == 'O' || hWin || dWin}
                             onClick={() => human(5)}
-                            className='myBtn'                        >
-                            {five}
+                            className='button-37'                        >
+                            {five == 'O' && <Zero></Zero>}
+                            {five == 'X' && <Cross></Cross>}
                         </button>
                     </div>
                     <div>
                         <button
                             disabled={six == 'X' || six == 'O' || hWin || dWin}
                             onClick={() => human(6)}
-                            className='myBtn'                        >
-                            {six}
+                            className='button-37'                        >
+                            {six == 'O' && <Zero></Zero>}
+                            {six == 'X' && <Cross></Cross>}
                         </button>
                     </div>
                 </div>
@@ -180,24 +187,27 @@ export default function Home() {
                         <button
                             disabled={seven == 'X' || seven == 'O' || hWin || dWin}
                             onClick={() => human(7)}
-                            className='myBtn'                        >
-                            {seven}
+                            className='button-37'                        >
+                            {seven == 'O' && <Zero></Zero>}
+                            {seven == 'X' && <Cross></Cross>}
                         </button>
                     </div>
                     <div>
                         <button
                             disabled={eight == 'X' || eight == 'O' || hWin || dWin}
                             onClick={() => human(8)}
-                            className='myBtn'                        >
-                            {eight}
+                            className='button-37'                        >
+                            {eight == 'O' && <Zero></Zero>}
+                            {eight == 'X' && <Cross></Cross>}
                         </button>
                     </div>
                     <div>
                         <button
                             disabled={nine == 'X' || nine == 'O' || hWin || dWin}
                             onClick={() => human(9)}
-                            className='myBtn'                        >
-                            {nine}
+                            className='button-37'                        >
+                            {nine == 'O' && <Zero></Zero>}
+                            {nine == 'X' && <Cross></Cross>}
                         </button>
                     </div>
                 </div>
